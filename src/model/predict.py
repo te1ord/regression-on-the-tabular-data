@@ -11,7 +11,7 @@ test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
 
 
 net = PolynomialRegression(1, 50, 1)
-net.train_model(train_loader, 20, 0.001)
+net.train_model(train_loader, 1000, 0.001)
 
 
 predictions_train, truth_values_train = net.predict(train_loader)
@@ -27,4 +27,4 @@ predict_dataloader = DataLoader(predict_dataset, batch_size=64)
 predictions, _ = net.predict(predict_dataloader)
 
 
-predictions.tofile('predictions.csv', sep = ',')
+predictions.tofile('/Users/ivanbashtovoy/Documents/quantum/regression-on-the-tabular-data/predictions.csv', sep = ',')
